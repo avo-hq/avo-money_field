@@ -10,6 +10,9 @@ Gem::Specification.new do |spec|
   spec.authors = ["Adrian Marin"]
   spec.email = "adrian@adrianthedev.com"
   spec.files = ["lib/avo_money_field.rb"]
+
+  spec.files = Dir["{lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md", "avo-money_field.gemspec", "Gemfile", "Gemfile.lock"]
+
   spec.homepage = "https://avohq.io"
   spec.license = "MIT"
 

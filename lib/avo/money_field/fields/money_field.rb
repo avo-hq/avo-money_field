@@ -9,7 +9,8 @@ module Avo
           super(id, **args, &block)
 
           add_array_prop args, :currencies
-          add_string_prop args, :currency_suffix, ::MoneyRails::Configuration.currency_column[:postfix]
+          currency_suffix = defined?(MoneyRails) ? ::MoneyRails::Configuration.currency_column[:postfix] : :_currency
+          add_string_prop args, :currency_suffix, currency_suffix
         end
 
         def to_permitted_param
