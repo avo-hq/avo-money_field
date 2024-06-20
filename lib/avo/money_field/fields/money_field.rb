@@ -25,7 +25,7 @@ module Avo
         end
 
         def currency
-          value.send(:currency)
+          value && value.send(:currency)
         end
 
         def currency_column
