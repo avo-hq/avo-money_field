@@ -10,13 +10,15 @@
       multiple: multiple,
       autocomplete: @field.autocomplete
     %>
-    <%= @form.select @field.currency_column,
-      options_for_select(@field.currencies, selected: @field.currency),
-      {},
-      class: classes("w-24"),
-      disabled: disabled?,
-      value: @field.currency,
-      autocomplete: @field.autocomplete
-    %>
+    <% if @field.enable_currency %>
+      <%= @form.select @field.currency_column,
+        options_for_select(@field.currencies, selected: @field.currency),
+        {},
+        class: classes("w-24"),
+        disabled: disabled?,
+        value: @field.currency,
+        autocomplete: @field.autocomplete
+      %>
+    <% end %>
   </div>
 <% end %>
